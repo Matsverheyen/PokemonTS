@@ -1,7 +1,7 @@
 export type EnergyType = "Normal" | "Bug" | "Dark" | "Dragon" | "Electric" | "Fairy" | "Fighting" | "Fire" | "Flying" | "Ghost" | "Grass" | "Ground" | "Ice" | "Poison" | "Psychic" | "Rock" | "Steel" | "Water";
 
 export interface Attack {
-  moveName: string;
+  move: string;
   damage: number;
 }
 
