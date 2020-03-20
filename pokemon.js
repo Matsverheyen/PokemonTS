@@ -30,6 +30,14 @@ var Pokemon = /** @class */ (function () {
         target.hitpoints = target.hitpoints - damage;
         return damage;
     };
+    Pokemon.getPopulation = function () {
+        //TODO
+        console.log('getPopulation()');
+    };
+    Pokemon.getPopulationHealth = function () {
+        //TODO
+        console.log('getPopulationHealth()');
+    };
     Pokemon.prototype.attack = function (target, attack) {
         console.log(this.name + "'s HP: " + this.hitpoints);
         if (typeof this.attacks.find(function (_a) {
@@ -39,10 +47,13 @@ var Pokemon = /** @class */ (function () {
             console.log(attack + " not found!");
         }
         else {
-            var damage = this.attacks.find(function (_a) {
+            var _attack = this.attacks.find(function (_a) {
                 var move = _a.move;
                 return move == attack;
-            }).damage;
+            });
+            if (typeof _attack !== 'undefined') {
+                var damage = _attack.damage;
+            }
             switch (this.energyType) {
                 case target.weakness.type:
                     console.log(this.name + " Did " + this.calculateDamageWeakness(target, damage) + " Damage to " + target.name + "!");
@@ -58,7 +69,4 @@ var Pokemon = /** @class */ (function () {
     };
     return Pokemon;
 }());
-var Pikachu = new Pokemon("Pikachu", "Electric", 60, [{ 'move': 'Electric Ring', 'damage': 50 }, { 'move': 'Pika Punch', 'damage': 20 }], { 'type': 'Fire', 'multiplier': 1.5 }, { 'type': 'Fighting', 'multiplier': 20 });
-var Charmander = new Pokemon("Charmander", "Fire", 60, [{ 'move': 'Head Butt', 'damage': 10 }, { 'move': 'Flare', 'damage': 30 }], { 'type': 'Water', 'multiplier': 2 }, { 'type': 'Electric', 'multiplier': 10 });
-Pikachu.attack(Charmander, 'Electric Ring');
-Charmander.attack(Pikachu, 'Flare');
+exports.Pokemon = Pokemon;
