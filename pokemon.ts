@@ -32,16 +32,6 @@ export class Pokemon{
     return damage;
   }
 
-  static getPopulation(): void {
-    //TODO
-    console.log('getPopulation()');
-  }
-
-  static getPopulationHealth(): void {
-    //TODO
-    console.log('getPopulationHealth()');
-  }
-
   public attack(target: Pokemon, attack: string): void {
     console.log(`${this.name}'s HP: ${this.hitpoints}`);
     if (typeof this.attacks.find(({ move }) => move == attack) === 'undefined') {
