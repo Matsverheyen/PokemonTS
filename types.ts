@@ -5,6 +5,11 @@ export interface Attack {
   damage: number;
 }
 
+export interface Population {
+  name: string;
+  hitpoints: number
+}
+
 export interface Weakness {
   type: EnergyType;
   multiplier: number;

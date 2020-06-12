@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var pokemon_1 = require("./pokemon");
+//Hier wordt de class Charmander aangemaakt, Charmander is altijd een 'Fire' soort en heeft altijd dezelfde weakness en resistance!
 var Charmander = /** @class */ (function (_super) {
     __extends(Charmander, _super);
     function Charmander(name, hitpoints, attacks) {
