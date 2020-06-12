@@ -9,8 +9,16 @@ export class PokeBag {
     this.pokemons = [];
   }
 
-  //Met deze functie kun je pokemons toevoegen aan je bag
   public addToBag(pokemon: Pokemon): void {
+    /**
+     * Adds pokemon to the PokeBag
+     *
+     * @remarks
+     * This method is part of the PokeBag class
+     *
+     * @param pokemon - the targeted pokemon to add to the bag
+     * @returns void
+     */
     if (this.pokemons.length >= this.size) {
       console.log(`Pokebag zit vol!`);
     } else {
@@ -18,20 +26,40 @@ export class PokeBag {
     }
   }
 
-  //Met deze functie kan je pokemons verwijderen uit je bag
   public removeFromBag(pokemon: Pokemon): void {
+    /**
+     * removes pokemon from the PokeBag
+     *
+     * @remarks
+     * This method is part of the PokeBag class
+     *
+     * @param pokemon - the targeted pokemon to remove from the bag
+     * @returns void
+     */
     let index = this.pokemons.findIndex(obj => obj.name === pokemon.name);
     this.pokemons.splice(index, index + 1);
   }
 
-  //Met deze functie verwijder je alles uit je bag
   public removeAll(): void {
+    /**
+     * removes all pokemons from the PokeBag
+     *
+     * @remarks
+     * This method is part of the PokeBag class
+     *
+     */
     this.pokemons = [];
   }
 
-  //Met deze functie laat je zien welke pokemons er allemaal in je bag zitten
-  public getAllInBag():void {
+  public getAllInBag(): void {
+    /**
+     * logs all pokemons in the PokeBag
+     *
+     * @remarks
+     * This method is part of the PokeBag class
+     *
+     */
     console.log(this.pokemons.map(x => x.name));
   }
-  
+
 }

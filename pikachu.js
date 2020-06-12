@@ -14,14 +14,31 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var pokemon_1 = require("./pokemon");
-//Hier wordt de class Pikachu aangemaakt, Pikachu is altijd een 'Electric' soort en heeft altijd dezelfde weakness en resistance!
 var Pikachu = /** @class */ (function (_super) {
     __extends(Pikachu, _super);
-    function Pikachu(name, hitpoints, attacks) {
-        var _this = _super.call(this, name, 'Electric', hitpoints, attacks, { 'type': 'Fire', 'multiplier': 1.5 }, { 'type': 'Fighting', 'multiplier': 20 }) || this;
+    /**
+     *
+     * @param name - the name of the pokemon
+     * @param hitpoints - the hitpoints of the pokemon
+     */
+    function Pikachu(name, hitpoints) {
+        var _this = _super.call(this, name, 'Electric', hitpoints, [{
+                'move': 'Electric Ring',
+                'damage': 50
+            },
+            {
+                'move': 'Pika Punch',
+                'damage': 20
+            }
+        ], {
+            'type': 'Fire',
+            'multiplier': 1.5
+        }, {
+            'type': 'Fighting',
+            'multiplier': 20
+        }) || this;
         _this.name = name;
         _this.hitpoints = hitpoints;
-        _this.attacks = attacks;
         return _this;
     }
     return Pikachu;

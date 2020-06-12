@@ -5,8 +5,16 @@ var PokeBag = /** @class */ (function () {
         this.size = size;
         this.pokemons = [];
     }
-    //Met deze functie kun je pokemons toevoegen aan je bag
     PokeBag.prototype.addToBag = function (pokemon) {
+        /**
+         * Adds pokemon to the PokeBag
+         *
+         * @remarks
+         * This method is part of the PokeBag class
+         *
+         * @param pokemon - the targeted pokemon to add to the bag
+         * @returns void
+         */
         if (this.pokemons.length >= this.size) {
             console.log("Pokebag zit vol!");
         }
@@ -14,17 +22,37 @@ var PokeBag = /** @class */ (function () {
             this.pokemons.push(pokemon);
         }
     };
-    //Met deze functie kan je pokemons verwijderen uit je bag
     PokeBag.prototype.removeFromBag = function (pokemon) {
+        /**
+         * removes pokemon from the PokeBag
+         *
+         * @remarks
+         * This method is part of the PokeBag class
+         *
+         * @param pokemon - the targeted pokemon to remove from the bag
+         * @returns void
+         */
         var index = this.pokemons.findIndex(function (obj) { return obj.name === pokemon.name; });
         this.pokemons.splice(index, index + 1);
     };
-    //Met deze functie verwijder je alles uit je bag
     PokeBag.prototype.removeAll = function () {
+        /**
+         * removes all pokemons from the PokeBag
+         *
+         * @remarks
+         * This method is part of the PokeBag class
+         *
+         */
         this.pokemons = [];
     };
-    //Met deze functie laat je zien welke pokemons er allemaal in je bag zitten
     PokeBag.prototype.getAllInBag = function () {
+        /**
+         * logs all pokemons in the PokeBag
+         *
+         * @remarks
+         * This method is part of the PokeBag class
+         *
+         */
         console.log(this.pokemons.map(function (x) { return x.name; }));
     };
     return PokeBag;

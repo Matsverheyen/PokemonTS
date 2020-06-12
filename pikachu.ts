@@ -1,9 +1,31 @@
 import { Pokemon } from './pokemon';
-import {Attack } from './types';
 
-//Hier wordt de class Pikachu aangemaakt, Pikachu is altijd een 'Electric' soort en heeft altijd dezelfde weakness en resistance!
 export class Pikachu extends Pokemon {
-  constructor(public name: string, public hitpoints: number, public attacks: Attack[]) {
-    super(name, 'Electric', hitpoints, attacks, { 'type': 'Fire', 'multiplier': 1.5 }, { 'type': 'Fighting', 'multiplier': 20 });
+  /**
+   * 
+   * @param name - the name of the pokemon
+   * @param hitpoints - the hitpoints of the pokemon
+   */
+  constructor(public name: string, public hitpoints: number) {
+    super(
+      name,
+      'Electric',
+      hitpoints,
+      [{
+          'move': 'Electric Ring',
+          'damage': 50
+        },
+        {
+          'move': 'Pika Punch',
+          'damage': 20
+        }
+      ], {
+        'type': 'Fire',
+        'multiplier': 1.5
+      }, {
+        'type': 'Fighting',
+        'multiplier': 20
+      }
+    );
   }
 }
