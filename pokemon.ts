@@ -2,8 +2,7 @@ import { EnergyType, Attack, Weakness, Resistance } from './types';
 import { PokeBag } from './pokebag';
 
 export class Pokemon{
-
-  constructor(public name: string, public energyType: EnergyType, public hitpoints: number, public attacks: Attack[], public weakness: Weakness, public resistance: Resistance ) {
+  constructor(protected name: string, protected energyType: EnergyType, protected hitpoints: number, protected attacks: Attack[], protected weakness: Weakness, protected resistance: Resistance) {
     this.name = name;
     this.energyType = energyType;
     this.hitpoints = hitpoints;
@@ -11,7 +10,6 @@ export class Pokemon{
     this.weakness = weakness;
     this.resistance = resistance;
   }
-
 
   public getAllInfo(): void {
     console.log(this);

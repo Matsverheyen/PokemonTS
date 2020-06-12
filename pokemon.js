@@ -30,14 +30,6 @@ var Pokemon = /** @class */ (function () {
         target.hitpoints = target.hitpoints - damage;
         return damage;
     };
-    Pokemon.getPopulation = function () {
-        //TODO
-        console.log('getPopulation()');
-    };
-    Pokemon.getPopulationHealth = function () {
-        //TODO
-        console.log('getPopulationHealth()');
-    };
     Pokemon.prototype.attack = function (target, attack) {
         console.log(this.name + "'s HP: " + this.hitpoints);
         if (typeof this.attacks.find(function (_a) {

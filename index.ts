@@ -1,17 +1,18 @@
 import { PokeBag } from './pokebag';
-import { Pokemon } from './pokemon';
+import { Pikachu } from './pikachu';
+import { Charmander } from './charmander';
 
-let Pikachu: Pokemon = new Pokemon("Pikachu", "Electric", 60, [{ 'move': 'Electric Ring', 'damage': 50 }, { 'move': 'Pika Punch', 'damage': 20 }], { 'type': 'Fire', 'multiplier': 1.5 }, { 'type': 'Fighting', 'multiplier': 20 })
-let Charmander: Pokemon = new Pokemon("Charmander", "Fire", 60, [{ 'move': 'Head Butt', 'damage': 10 }, { 'move': 'Flare', 'damage': 30 }], { 'type': 'Water', 'multiplier': 2 }, { 'type': 'Electric', 'multiplier': 10 })
+let pika = new Pikachu("Pikachu", 60, [{ 'move': 'Electric Ring', 'damage': 50 }, { 'move': 'Pika Punch', 'damage': 20 }]);
+let char = new Charmander("Charmander", 60, [{ 'move': 'Head Butt', 'damage': 10 }, { 'move': 'Flare', 'damage': 30 }]);
 
 var bag: any = new PokeBag(10);
 
-Pikachu.attack(Charmander, 'Electric Ring');
-Charmander.attack(Pikachu, 'Flare');
+pika.attack(char, 'Electric Ring');
+char.attack(pika, 'Flare');
 
-bag.addToBag(Pikachu);
-bag.addToBag(Charmander);
+bag.addToBag(pika);
+bag.addToBag(char);
 
-bag.removeFromBag(Charmander);
+bag.removeFromBag(char);
 
 bag.getAllInBag();
