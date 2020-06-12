@@ -15,6 +15,8 @@ var bag: any = new PokeBag(10);
 
 pika.attack(char, 'Electric Ring');
 char.attack(pika, 'Flare');
+char.attack(pika, 'Flare');
+char.attack(pika, 'Flare');
 
 bag.addToBag(pika);
 bag.addToBag(char);

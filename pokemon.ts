@@ -26,7 +26,6 @@ export class Pokemon{
     console.log(`Gemiddelde health van de levende pokemons: ${Pokemon.population.reduce((a,b) => a + b.hitpoints, 0) / Pokemon.population.length}`)
   }
 
-
   //Met deze functie wordt alle info van de pokemon weergeven.
   public getAllInfo(): void {
     console.log(this);
@@ -52,6 +51,13 @@ export class Pokemon{
 
   //Hier wordt de attack uitgevoerd en logt hij alles in de terminal
   public attack(target: Pokemon, attack: string): void {
+    if (target.hitpoints <= 0) {
+      Pokemon.population = Pokemon.population.filter((pokemon) => {
+        return pokemon.name !== target.name;
+      })
+      console.log(`${target.name} is dead!`);
+      Pokemon.getPopulation();
+    }
     console.log(`${this.name}'s HP: ${this.hitpoints}`);
     if (typeof this.attacks.find(({ move }) => move == attack) === 'undefined') {
       console.log(`${attack} not found!`)

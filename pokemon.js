@@ -45,6 +45,13 @@ var Pokemon = /** @class */ (function () {
     };
     //Hier wordt de attack uitgevoerd en logt hij alles in de terminal
     Pokemon.prototype.attack = function (target, attack) {
+        if (target.hitpoints <= 0) {
+            Pokemon.population = Pokemon.population.filter(function (pokemon) {
+                return pokemon.name !== target.name;
+            });
+            console.log(target.name + " is dead!");
+            Pokemon.getPopulation();
+        }
         console.log(this.name + "'s HP: " + this.hitpoints);
         if (typeof this.attacks.find(function (_a) {
             var move = _a.move;
